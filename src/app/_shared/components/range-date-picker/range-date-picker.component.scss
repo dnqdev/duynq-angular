@@ -1,0 +1,46 @@
+::ng-deep.custom-range-date-picker{
+    width: 100%;
+    position: relative;
+    input{
+        background: #F5F8FA;
+        border-radius: 6px;
+        text-align: center;
+        border: none;
+        height: 40px;
+        padding: 5px 20px 5px 5px;
+    }
+    input:focus{
+        background: #F5F8FA;
+        border-radius: 6px;
+        text-align: center;
+        border: none;
+    }
+    .icon-date-picker{
+        position: absolute;
+        top: 12px;
+        right: 7px;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+    }
+    .md-drppicker.shown{
+        width: 560px !important;
+    }
+    .calendar-time{
+        .select-item{
+            font-size: 1.4rem !important;
+            padding: 0 !important;
+            border-bottom: unset !important;
+        }
+    }
+    .btn{
+        height: 30px !important;
+        width: 80px !important;
+        padding: 0 !important;
+        font-size: 1.2rem !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        float: right !important;
+    }
+}

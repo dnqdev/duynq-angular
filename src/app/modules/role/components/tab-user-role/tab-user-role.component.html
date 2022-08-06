@@ -1,0 +1,83 @@
+<ng-container *transloco="let t; scope: 'role'">
+  <div class="filter d-flex flex-wrap algin-items-center justify-content-end">
+    <div class="so-input-search mx-4 mb-3">
+      <nz-input-group [nzSuffix]="suffixIconSearch">
+        <input type="text" name="input-search" nz-input placeholder="{{t('role.search')}}" #searchInput
+          (keydown)="search($event, searchInput.value)" />
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <img src="assets/images/svg/search.svg" alt="" nzType="search">
+      </ng-template>
+    </div>
+    <ng-template ngxPermissionsOnly="{{ permission.role_modify }}">
+      <button class="so-btn so-btn-primary so-btn-primary--small mb-3" (click)="create()" name="btn-create">
+        <img src="assets/images/svg/add.svg" alt="">
+        {{t('btnAction.add')}}
+      </button>
+    </ng-template>
+  </div>
+  <table class="table-global w-full mt-5">
+    <caption></caption>
+    <thead>
+      <th style="width: 5%;" class="text-header-table text-center">{{t('STT')}}</th>
+      <th style="width: 23%;" class="text-header-table"> {{t('role.nameUser')}}</th>
+      <th style="width: 10%;" class="text-header-table"> {{t('code')}} </th>
+      <th style="width: 10%;" class="text-header-table"> {{t('account')}} </th>
+      <th style="width: 12%;" class="text-header-table"> {{t('phone')}} </th>
+      <th style="width: 15%;" class="text-header-table"> {{t('email')}} </th>
+      <th style="width: 15%;" class="text-header-table"> {{t('status')}} </th>
+      <ng-template ngxPermissionsOnly="{{ permission.role_modify }}">
+        <th style="width: 10%;" class="text-center text-header-table"> {{t('action')}} </th>
+      </ng-template>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of listUsers; let i=index">
+        <tr>
+          <td class="text-content-table text-center">
+            {{(pageIndex-1)*pageSize + i + 1}}
+          </td>
+          <td class="text-content-table">
+            <span class="text-link fw-500" [routerLink]="item.id">{{item.fullName}}</span>
+          </td>
+          <td>
+            {{item.code}}
+          </td>
+          <td>
+            {{item.username}}
+          </td>
+          <td>
+            {{item.phone}}
+          </td>
+          <td>
+            {{item.email}}
+          </td>
+          <td>
+            <span class="badge so-badge so-badge-status so-badge-status-{{item?.isActive}}">
+              {{mapNameStatus(item?.isActive)}}
+            </span>
+          </td>
+          <ng-template ngxPermissionsOnly="{{ permission.role_modify }}">
+            <td class="text-center">
+              <div class="d-flex justify-content-center">
+                <button class="btn-remote" (click)="remove(item.id)" name="btn-remote">
+                  <img src="assets/images/svg/icon-delete.svg" alt="">
+                </button>
+              </div>
+            </td>
+          </ng-template>
+        </tr>
+      </ng-container>
+      <tr *ngIf="listUsers?.length == 0 || !listUsers">
+        <td class="text-no-data" colspan="8">{{t('noData')}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-pagination [pageSize]="pageSize" [pageIndex]="pageIndex" [collectionSize]="collectionSize"
+    *ngIf="collectionSize > sizeOption[0]" [sizeOption]="sizeOption" (paginationChange)="paginationChange($event)">
+  </app-pagination>
+</ng-container>
+
+<div class="spinner" *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>

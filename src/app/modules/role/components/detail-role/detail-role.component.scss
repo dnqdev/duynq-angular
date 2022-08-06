@@ -1,0 +1,19 @@
+.info {
+  min-width: 33%;
+  span:first-child {
+    font-weight: 600;
+    margin-right: 7px;
+    min-width: max-content;
+  }
+  span:last-child {
+    color: #50a5f1;
+    flex-grow: 1;
+  }
+}
+.info span.color-primary {
+  color: #464e5f;
+}
+
+.so-btn-primary--small img {
+  filter: invert(122%) sepia(12%) saturate(9%) hue-rotate(316deg) brightness(220%) contrast(175%);
+}

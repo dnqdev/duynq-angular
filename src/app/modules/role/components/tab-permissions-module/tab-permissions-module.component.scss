@@ -1,0 +1,31 @@
+.box {
+  background: #f5f8fa;
+  border-radius: 6px;
+  padding: 12px 15px;
+  height: 100%;
+  &-header {
+    span:first-child {
+      font-weight: 600;
+      margin-right: 7px;
+      min-width: max-content;
+      font-size: 1.4rem;
+    }
+    span:last-child {
+      color: #50a5f1;
+      flex-grow: 1;
+    }
+  }
+  &-body {
+    img {
+      margin-right: 7px;
+      width: 10px;
+    }
+    > div {
+      padding: 8px 10px;
+    }
+  }
+}
+
+.so-btn-primary--small img {
+  filter: invert(122%) sepia(12%) saturate(9%) hue-rotate(316deg) brightness(220%) contrast(175%);
+}

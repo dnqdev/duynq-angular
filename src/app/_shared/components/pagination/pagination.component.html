@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-between p-2 table-paginate-global">
+  <div class="custom-page-size">
+    <span class="title-page-size">Hiển thị</span>
+    <select class="custom-select" [(ngModel)]="pageSize" (ngModelChange)="refreshPageSize($event)">
+      <ng-container *ngIf="sizeOption && sizeOption.length > 0">
+        <option *ngFor="let item of sizeOption" [ngValue]="item">{{item}}</option>
+      </ng-container>
+    </select>
+  </div>
+  <div class="custom-page-index">
+    <span class="title-page-index">{{((pageIndex-1)*pageSize)+1}}-{{pageIndex*pageSize > collectionSize ? (pageIndex*pageSize - (pageIndex*pageSize - collectionSize)) : pageIndex*pageSize}} trong {{ collectionSize }}</span>
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="pageIndex" [pageSize]="pageSize" (pageChange)="refreshPageIndex($event)"></ngb-pagination>
+  </div>
+</div>

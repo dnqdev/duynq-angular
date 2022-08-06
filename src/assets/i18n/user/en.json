@@ -1,0 +1,53 @@
+{
+  "title": "User list",
+  "studentList": "Student list",
+  "fullname": "Fullname",
+  "username": "Username",
+  "code": "Code",
+  "phone": "Phone",
+  "login": "Login",
+  "loginTrue": "Logged",
+  "loginFalse": "Not logged",
+  "password": "Password",
+  "passwordTrue": "Changed",
+  "passwordFalse": "Haven't changed",
+  "active": "Actived",
+  "noActive": "locked",
+  "school": "School",
+  "newPassword": "New password",
+  "confirmPassword": "Confirm password",
+  "deleteUser": "Delete user",
+  "btnAction": {
+    "send": "Send notifications",
+    "changedPassword": "Change Password"
+  },
+  "validator": {
+    "password": {
+      "required": "Password required",
+      "pattern": "Password is not format"
+    },
+    "confirmPassword": {
+      "required": "Confirm password required",
+      "mustMatch": "Confirm password is incorrect"
+    }
+  },
+  "dob": "Date of birth",
+  "class": "Class",
+  "grade": "Grade",
+  "school1": "School",
+  "father": "Father",
+  "mother": "Mother",
+
+  "01": "Studying",
+  "02": "Move to period 1",
+  "03": "Leave school to re-study term 1",
+  "04": "Move to term 1",
+  "05": "Quit Semester 1",
+  "06": "Move to term 2",
+  "07": "Take a break from school to re-study term 2",
+  "08": "Move to term 2",
+  "09": "Quit Semester 2",
+  "10": "Moving in the summer",
+  "11": "Moving in the summer",
+  "12": "Quit school for the summer"
+}

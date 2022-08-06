@@ -1,0 +1,56 @@
+<div class="bg-white p-8 h-full" *transloco="let t; scope: 'role'">
+  <div>
+    <div class="d-flex algin-items-center justify-content-between">
+      <h3 class="title-compo-global">{{t('role.detailRole')}}</h3>
+      <ng-template ngxPermissionsOnly="{{ permission.role_modify }}">
+        <button class="so-btn so-btn-primary so-btn-primary--small" (click)="update()" name="btn-update-role">
+          <img src="assets/images/svg/edit.svg" alt="">
+          {{t('btnAction.update')}}
+        </button>
+      </ng-template>
+    </div>
+    <div class="mt-5">
+      <div class="d-flex w-full">
+        <div class="d-flex align-items-center info">
+          <span>{{t('role.nameRole')}}:</span>
+          <span>{{infoRole?.name || '--'}}</span>
+        </div>
+        <div class="d-flex align-items-center info">
+          <span>{{t('role.codeRole')}}:</span>
+          <span>{{infoRole?.code || '--'}}</span>
+        </div>
+        <div class="d-flex align-items-center info">
+          <span>{{t('role.layout')}}:</span>
+          <span>{{mapNameLayout()}}</span>
+        </div>
+      </div>
+      <div class="d-flex info w-full mt-3">
+        <span>{{t('description')}}:</span>
+        <span class="color-primary">{{infoRole?.description || '--'}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-15">
+    <nz-tabset (nzSelectedIndexChange)="changeTab($event)" [nzSelectedIndex]="tabActive-1">
+      <nz-tab [nzTitle]="tab1">
+        <ng-template #tab1>
+          <img src="assets/images/svg/list.svg" alt="">
+          {{t('role.listPermission')}}
+        </ng-template>
+        <app-tab-permissions-module [roleId]="roleId" *ngIf="tabActive == 1"></app-tab-permissions-module>
+      </nz-tab>
+      <nz-tab [nzTitle]="tab2">
+        <ng-template #tab2>
+          <img src="assets/images/svg/people.svg" alt="">
+          {{t('role.listUser')}}
+        </ng-template>
+        <app-tab-user-role [roleId]="roleId" *ngIf="tabActive == 2"></app-tab-user-role>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>
+
+<div class="spinner" *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>

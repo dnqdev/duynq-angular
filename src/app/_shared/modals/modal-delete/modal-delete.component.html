@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h5 class="title-modal-global">{{dataModal?.titleModal}}</h5>
+  <button type="button" class="close modal-btn-close" data-dismiss="modal" (click)="closeModal(false)" name="icon-close"
+  [hidden]="!dataModal?.isHiddenBtnClose">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="d-flex align-items-center">
+    <div class="content-left">
+      <img src="assets/images/png/bg-confirm-delete.png" alt="">
+    </div>
+    <div class="content-right">
+      <p class="content-header">Bạn có chắc muốn thực hiện thao tác này không?</p>
+      <p class="content-desc">Mọi dữ liệu sau khi thao tác sẽ bị ảnh hưởng và có không thể lấy lại dữ liệu!</p>
+      <div class="d-flex align-items-center">
+        <button type="button" class="so-btn so-btn-danger" name="btn-cancel" (click)="submit()">{{dataModal?.btnAccept}}</button>
+        <button type="button" class="so-btn so-btn-cancel" data-dismiss="modal" name="btn-accept" (click)="closeModal(false)">{{dataModal?.btnCancel}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spinner" *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>
+
+

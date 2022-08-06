@@ -1,0 +1,53 @@
+{
+  "title": "Danh sách người dùng",
+  "studentList": "Danh sách học sinh",
+  "fullname": "Họ và tên",
+  "username": "Tên đăng nhập",
+  "code": "Mã",
+  "phone": "Số điện thoại",
+  "login": "Đăng nhập",
+  "loginTrue": "Đã đăng nhập",
+  "loginFalse": "Chưa đăng nhập",
+  "password": "Mật khẩu",
+  "passwordTrue": "Đã đổi",
+  "passwordFalse": "Chưa đổi",
+  "active": "Kích hoạt",
+  "noActive": "Đã khóa",
+  "school": "Trường",
+  "newPassword": "Mật khẩu mới",
+  "confirmPassword": "Xác nhận mật khẩu",
+  "deleteUser": "Xóa người dùng",
+  "btnAction": {
+    "send": "Gửi thông báo",
+    "changedPassword": "Đổi mật khẩu"
+  },
+  "validator": {
+    "password": {
+      "required": "Bạn chưa nhập mật khẩu",
+      "pattern": "Mật khẩu không đúng định dạng"
+    },
+    "confirmPassword": {
+      "required": "Bạn chưa nhập lại mật khẩu xác nhận",
+      "mustMatch": "Mật khẩu nhập lại không đúng"
+    }
+  },
+  "dob": "Ngày sinh",
+  "class": "Lớp",
+  "grade": "Khối",
+  "school1": "Trường học",
+  "father": "Bố",
+  "mother": "Mẹ",
+
+  "01": "Đang học",
+  "02": "Chuyển đến kỳ 1",
+  "03": "Nghỉ học xin học lại kỳ 1",
+  "04": "Chuyển đi kỳ 1",
+  "05": "Thôi học kỳ 1",
+  "06": "Chuyển đến kỳ 2",
+  "07": "Nghỉ học xin học lại kỳ 2",
+  "08": "Chuyển đi kỳ 2",
+  "09": "Thôi học kỳ 2",
+  "10": "Chuyển đến trong hè",
+  "11": "Chuyển đi trong hè",
+  "12": "Thôi học trong hè"
+}

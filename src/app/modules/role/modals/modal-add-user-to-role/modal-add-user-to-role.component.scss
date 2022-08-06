@@ -1,0 +1,12 @@
+.so-checkbox .ant-checkbox+span {
+  display: none !important;
+}
+
+.so-checkbox .ant-checkbox+span:empty {
+  display: none !important;
+}
+
+
+.table-global tbody tr:last-child {
+  border-bottom: none !important;
+}

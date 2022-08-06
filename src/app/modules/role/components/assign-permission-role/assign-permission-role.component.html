@@ -1,0 +1,78 @@
+<div class="bg-white p-8 h-full">
+  <div>
+    <div class="d-flex algin-items-center justify-content-between">
+      <h3 class="title-compo-global">Thông tin phân quyền</h3>
+    </div>
+    <div class="mt-5">
+      <div class="d-flex w-full">
+        <div class="d-flex align-items-center info">
+          <span>Tên phân quyền:</span>
+          <span>{{infoRole?.name || '--'}}</span>
+        </div>
+        <div class="d-flex align-items-center info">
+          <span>Mã phân quyền:</span>
+          <span>{{infoRole?.code || '--'}}</span>
+        </div>
+        <div class="d-flex align-items-center info">
+          <span>Layout áp dụng:</span>
+          <span>{{mapNameLayout()}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-15">
+    <div class="d-flex algin-items-center justify-content-between">
+      <h3 class="title-compo-global">Danh sách quyền thao tác</h3>
+      <div class="filter d-flex">
+        <div class="so-input-search">
+          <nz-input-group [nzSuffix]="suffixIconSearch">
+            <input type="text" name="input-search" nz-input placeholder="Tìm kiếm" #searchInput
+              (keydown)="search($event, searchInput.value)" />
+          </nz-input-group>
+          <ng-template #suffixIconSearch>
+            <img src="assets/images/svg/search.svg" alt="" nzType="search">
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8">
+      <div class="row">
+        <ng-container *ngFor="let item of listAllPermission; let i=index">
+          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-5">
+            <div class="box {{item.isChecked ? 'active': ''}}">
+              <div class="box-header">
+                <label nz-checkbox class="so-checkbox" name="checkbox-module" [(ngModel)]="item.isChecked"
+                  [nzValue]="item.id" (ngModelChange)="checkedAll(i)">
+                  <span>{{item.name}}</span>
+                  <span class="text-link">({{item.code}})</span>
+                </label>
+              </div>
+              <div class="box-body mt-2">
+                <div *ngFor="let permission of item.permissions">
+                  <label nz-checkbox class="so-checkbox" name="checkbox-permission" [(ngModel)]="permission.isChecked"
+                    (ngModelChange)="isCheckCheckedAll(item, i, listAllPermission)" [nzValue]="permission.id">
+                    <span>{{permission.name}}&nbsp;</span>
+                    <span class="text-link">({{permission.name}})</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mt-8">
+      <div class="d-flex align-items-center justify-content-end">
+        <button type="button" class="so-btn so-btn-cancel mx-4" data-dismiss="modal" name="btn-cancel"
+          (click)="cancel()">Hủy</button>
+        <button type="button" class="so-btn so-btn-primary so-btn-primary--small" name="btn-accept"
+          (click)="submit()">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spinner" *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>

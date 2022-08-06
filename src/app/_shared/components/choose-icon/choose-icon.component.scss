@@ -1,0 +1,19 @@
+.list-icon{
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .item-icon{
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon{
+            cursor: pointer;
+            filter: brightness(0) saturate(100%) invert(39%) sepia(44%) saturate(1474%) hue-rotate(202deg) brightness(99%) contrast(87%);
+            width: 18px;
+            height: 16px;
+        }
+    }
+}

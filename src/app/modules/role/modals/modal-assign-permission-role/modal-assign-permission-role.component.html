@@ -1,0 +1,61 @@
+<ng-container *transloco="let t; scope: 'role'">
+  <div class="modal-header">
+    <h5 class="title-modal-global">{{t(dataModal?.titleModal)}}</h5>
+    <button type="button" class="close modal-btn-close" data-dismiss="modal" (click)="closeModal(false)"
+      name="icon-close" [hidden]="!dataModal?.isHiddenBtnClose">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-normal-global">
+    <div class="d-flex algin-items-center justify-content-end">
+      <div class="filter d-flex">
+        <div class="so-input-search">
+          <nz-input-group [nzSuffix]="suffixIconSearch">
+            <input type="text" name="input-search" nz-input placeholder="{{t('role.search')}}" #searchInput
+              (keydown)="search($event, searchInput.value)" />
+          </nz-input-group>
+          <ng-template #suffixIconSearch>
+            <img src="assets/images/svg/search.svg" alt="" nzType="search">
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8">
+      <div class="row">
+        <ng-container *ngFor="let item of listAllPermission; let i=index">
+          <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-5">
+            <div class="box {{item.isChecked ? 'active': ''}}">
+              <div class="box-header">
+                <label nz-checkbox class="so-checkbox" name="checkbox-module" [(ngModel)]="item.isChecked"
+                  [nzValue]="item.id" (ngModelChange)="checkedAll(i)">
+                  <span>{{item.name}}</span>
+                  <span class="text-link">({{item.code}})</span>
+                </label>
+              </div>
+              <div class="box-body mt-2">
+                <div *ngFor="let permission of item.permissions">
+                  <label nz-checkbox class="so-checkbox" name="checkbox-permission" [(ngModel)]="permission.isChecked"
+                    (ngModelChange)="isCheckCheckedAll(item, i, listAllPermission)" [nzValue]="permission.id">
+                    <span>{{permission.name}}&nbsp;</span>
+                    <span class="text-link">({{permission.name}})</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <p class="text-no-data" *ngIf="listAllPermission?.length == 0 || !listAllPermission">{{t('noData')}}</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="so-btn so-btn-cancel mx-4" data-dismiss="modal" name="btn-cancel"
+      (click)="closeModal(false)">{{t(dataModal?.btnCancel)}}</button>
+    <button type="button" class="so-btn so-btn-primary so-btn-primary--small" name="btn-accept"
+      (click)="submit()">{{t(dataModal?.btnAccept)}}</button>
+  </div>
+</ng-container>
+
+<div class="spinner" *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>

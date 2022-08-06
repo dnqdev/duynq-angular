@@ -1,0 +1,67 @@
+.content-left {
+  width: 40%;
+  img {
+    width: 100%;
+  }
+}
+
+.content-right {
+  flex-grow: 1;
+  margin-left: 15px;
+  p.content-header {
+    color: #F64E60;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  p.content-desc {
+    color: #80808F;
+    margin-bottom: 1.7rem;
+  }
+}
+
+.so-btn-cancel {
+  margin-left: 13px;
+}
+
+.modal-header {
+  border-bottom-color: #d9d3d3;
+}
+
+::ng-deep app-modal-delete {
+  background: #F3F6F9;
+}
+
+::ng-deep .modal-md-plus {
+  max-width: 35%;
+}
+
+@media (max-width: 1200px) {
+  ::ng-deep .modal-md-plus {
+    max-width: 45%;
+  }
+} 
+
+@media (max-width: 992px) {
+  ::ng-deep .modal-md-plus {
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  ::ng-deep .modal-md-plus {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  ::ng-deep .modal-md-plus {
+    max-width: 60%;
+  }
+}
+
+
+
+
+
+

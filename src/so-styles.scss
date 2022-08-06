@@ -1,0 +1,1038 @@
+// @font-face {
+//     font-family: Mulish-Black;
+//     src: url(./assets/fonts/Mulish/static/Mulish-Black.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-BlackItalic;
+//     src: url(./assets/fonts/Mulish/static/Mulish-BlackItalic.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-Bold;
+//     src: url(./assets/fonts/Mulish/static/Mulish-Bold.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-BoldItalic;
+//     src: url(./assets/fonts/Mulish/static/Mulish-BoldItalic.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-ExtraBold;
+//     src: url(./assets/fonts/Mulish/static/Mulish-ExtraBold.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-ExtraBoldItalic;
+//     src: url(./assets/fonts/Mulish/static/Mulish-ExtraBoldItalic.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-ExtraLight;
+//     src: url(./assets/fonts/Mulish/static/Mulish-ExtraLight.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-ExtraLightItalic;
+//     src: url(./assets/fonts/Mulish/static/Mulish-ExtraLightItalic.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-Italic;
+//     src: url(./assets/fonts/Mulish/static/Mulish-Italic.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-Light;
+//     src: url(./assets/fonts/Mulish/static/Mulish-Light.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-LightItalic;
+//     src: url(./assets/fonts/Mulish/static/Mulish-LightItalic.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-Medium;
+//     src: url(./assets/fonts/Mulish/static/Mulish-Medium.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-MediumItalic;
+//     src: url(./assets/fonts/Mulish/static/Mulish-MediumItalic.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-Regular;
+//     src: url(./assets/fonts/Mulish/static/Mulish-Regular.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-SemiBold;
+//     src: url(./assets/fonts/Mulish/static/Mulish-SemiBold.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-SemiBoldItalic;
+//     src: url(./assets/fonts/Mulish/static/Mulish-SemiBoldItalic.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-VariableFont_wght;
+//     src: url(./assets/fonts/Mulish/Mulish-VariableFont_wght.ttf) format("truetype");
+// }
+
+// @font-face {
+//     font-family: Mulish-Italic;
+//     src: url(./assets/fonts/Mulish/Mulish-Italic-VariableFont_wght.ttf) format("truetype");
+// }
+html {
+    font-size: 62.5% !important;
+}
+
+html {
+    font-size: 62.5% !important;
+}
+
+body {
+    margin: 0;
+    font-family: Mulish;
+}
+
+.spinner {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: rgb(0 0 0 / 28%) !important;
+
+    .lds-roller {
+        display: inline-block;
+        position: relative;
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .lds-roller div {
+        animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        transform-origin: 4rem 4rem;
+    }
+
+    .lds-roller div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background: #fff;
+        margin: -4px 0 0 -4px;
+    }
+
+    .lds-roller div:nth-child(1) {
+        animation-delay: -0.036s;
+    }
+
+    .lds-roller div:nth-child(1):after {
+        top: 6.3rem;
+        left: 6.3rem;
+    }
+
+    .lds-roller div:nth-child(2) {
+        animation-delay: -0.072s;
+    }
+
+    .lds-roller div:nth-child(2):after {
+        top: 6.8rem;
+        left: 5.6rem;
+    }
+
+    .lds-roller div:nth-child(3) {
+        animation-delay: -0.108s;
+    }
+
+    .lds-roller div:nth-child(3):after {
+        top: 7.1rem;
+        left: 4.8rem;
+    }
+
+    .lds-roller div:nth-child(4) {
+        animation-delay: -0.144s;
+    }
+
+    .lds-roller div:nth-child(4):after {
+        top: 7.2rem;
+        left: 4rem;
+    }
+
+    .lds-roller div:nth-child(5) {
+        animation-delay: -0.18s;
+    }
+
+    .lds-roller div:nth-child(5):after {
+        top: 7.1rem;
+        left: 3.2rem;
+    }
+
+    .lds-roller div:nth-child(6) {
+        animation-delay: -0.216s;
+    }
+
+    .lds-roller div:nth-child(6):after {
+        top: 6.8rem;
+        left: 2.4rem;
+    }
+
+    .lds-roller div:nth-child(7) {
+        animation-delay: -0.252s;
+    }
+
+    .lds-roller div:nth-child(7):after {
+        top: 6.3rem;
+        left: 1.7rem;
+    }
+
+    .lds-roller div:nth-child(8) {
+        animation-delay: -0.288s;
+    }
+
+    .lds-roller div:nth-child(8):after {
+        top: 5.6rem;
+        left: 1.2rem;
+    }
+
+    @keyframes lds-roller {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+//default font-size
+.text-form-control-global {
+    font-size: 1.4rem
+}
+
+.text-medium-global {
+    font-size: 1.5rem;
+}
+
+.text-normal-global {
+    font-size: 1.3rem;
+}
+
+.text-content-table {
+    font-size: 1.3rem;
+}
+
+.text-header-table {
+    font-size: 1.4rem;
+}
+
+.title-dialog-global {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+// css pagination global
+.table-paginate-global {
+    .custom-page-size {
+        display: flex !important;
+        align-items: center !important;
+
+        .title-page-size {
+            margin-right: 10px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 20px;
+            color: #464E5F;
+        }
+
+        .custom-select {
+            width: 65px;
+            height: 30px;
+            background: #F5F8FA;
+            border-radius: 5px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 18px;
+            color: #556EE6;
+            border: solid 1px #F5F8FA;
+            background: url('./assets/images/png/icon_down_select_option.png') no-repeat right #F5F8FA;
+            -webkit-appearance: none;
+            padding-left: 15px;
+            cursor: pointer;
+        }
+
+        .custom-select:focus-visible {
+            outline: none;
+        }
+    }
+
+    .custom-page-index {
+        display: flex !important;
+        align-items: center !important;
+
+        .title-page-index {
+            margin-right: 10px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 20px;
+            color: #464E5F;
+        }
+
+        .pagination {
+            .page-item {
+                .page-link {
+                    border: 1px solid #A3A1A1;
+                    border-radius: 4px;
+                    align-items: center;
+                    text-align: center;
+                    color: #25282B;
+                    font-weight: 400;
+                    font-size: 1.2rem;
+                    line-height: 16px;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .page-item.active {
+                .page-link {
+                    background: #556EE6;
+                    border-radius: 4px;
+                    align-items: center;
+                    text-align: center;
+                    color: #FFFFFF;
+                    font-weight: 400;
+                    font-size: 1.2rem;
+                    line-height: 16px;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+}
+
+// end css pagination global
+
+
+// css table
+.table-global {
+    thead {
+        th {
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+        border-bottom: 1px solid #EFF3F4 !important;
+
+        th.border-left {
+            border-left: 1px solid #EFF3F4 !important;
+        }
+
+        th.border-right {
+            border-right: 1px solid #EFF3F4 !important;
+        }
+
+        th.border-top {
+            border-top: 1px solid #EFF3F4 !important;
+        }
+
+        th.border-bottom {
+            border-bottom: 1px solid #EFF3F4 !important;
+        }
+    }
+
+    thead.no-border {
+        border-bottom: none !important;
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid #EFF3F4 !important;
+        }
+
+        tr.no-border {
+            border-bottom: none !important;
+        }
+
+        tr.no-border:last-child {
+            border-bottom: none !important;
+        }
+
+        tr:last-child {
+            border-bottom: 1px solid #EFF3F4 !important;
+        }
+
+        td {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        td.border-left {
+            border-left: 1px solid #EFF3F4 !important;
+        }
+
+        td.border-right {
+            border-right: 1px solid #EFF3F4 !important;
+        }
+
+        td.border-top {
+            border-top: 1px solid #EFF3F4 !important;
+        }
+
+        td.border-bottom {
+            border-bottom: 1px solid #EFF3F4 !important;
+        }
+
+        tr:last-child .border-bottom {
+            border-bottom: 1px solid #EFF3F4 !important;
+        }
+    }
+}
+
+// end css table
+
+// css font-size
+.fs-10 {
+    font-size: 1rem !important;
+}
+
+.fs-11 {
+    font-size: 1.1rem !important;
+}
+
+.fs-12 {
+    font-size: 1.2rem !important;
+}
+
+.fs-13 {
+    font-size: 1.3rem !important;
+}
+
+.fs-14 {
+    font-size: 1.4rem !important;
+}
+
+.fs-15 {
+    font-size: 1.5rem !important;
+}
+
+.fs-16 {
+    font-size: 1.6rem !important;
+}
+
+.fs-17 {
+    font-size: 1.7rem !important;
+}
+
+.fs-18 {
+    font-size: 1.8rem !important;
+}
+
+.fs-19 {
+    font-size: 1.9rem !important;
+}
+
+.fs-20 {
+    font-size: 2rem !important;
+}
+
+.fs-21 {
+    font-size: 2.1rem !important;
+}
+
+.fs-22 {
+    font-size: 2.2rem !important;
+}
+
+.fs-23 {
+    font-size: 2.3rem !important;
+}
+
+.fs-24 {
+    font-size: 2.4rem !important;
+}
+
+.fs-25 {
+    font-size: 2.5rem !important;
+}
+
+.fs-26 {
+    font-size: 2.6rem !important;
+}
+
+.fs-27 {
+    font-size: 2.7rem !important;
+}
+
+.fs-28 {
+    font-size: 2.8rem !important;
+}
+
+.fs-29 {
+    font-size: 2.9rem !important;
+}
+
+.fs-30 {
+    font-size: 3rem !important;
+}
+
+// end css font-size
+
+// responsive font-size
+@media (max-width: 1280px) {
+    .fs-10 {
+        font-size: 0.8rem !important;
+    }
+
+    .fs-11 {
+        font-size: 0.9rem !important;
+    }
+
+    .fs-12 {
+        font-size: 1rem !important;
+    }
+
+    .fs-13 {
+        font-size: 1.1rem !important;
+    }
+
+    .fs-14 {
+        font-size: 1.2rem !important;
+    }
+
+    .fs-15 {
+        font-size: 1.3rem !important;
+    }
+
+    .fs-16 {
+        font-size: 1.4rem !important;
+    }
+
+    .fs-17 {
+        font-size: 1.5rem !important;
+    }
+
+    .fs-18 {
+        font-size: 1.6rem !important;
+    }
+
+    .fs-19 {
+        font-size: 1.7rem !important;
+    }
+
+    .fs-20 {
+        font-size: 1.8rem !important;
+    }
+
+    .fs-21 {
+        font-size: 1.9rem !important;
+    }
+
+    .fs-22 {
+        font-size: 2rem !important;
+    }
+
+    .fs-23 {
+        font-size: 2.1rem !important;
+    }
+
+    .fs-24 {
+        font-size: 2.2rem !important;
+    }
+
+    .fs-25 {
+        font-size: 2.3rem !important;
+    }
+
+    .fs-26 {
+        font-size: 2.4rem !important;
+    }
+
+    .fs-27 {
+        font-size: 2.5rem !important;
+    }
+
+    .fs-28 {
+        font-size: 2.6rem !important;
+    }
+
+    .fs-29 {
+        font-size: 2.7rem !important;
+    }
+
+    .fs-30 {
+        font-size: 2.8rem !important;
+    }
+}
+
+// responsive font-size
+
+// css font weight
+.fw-100 {
+    font-weight: 100 !important;
+}
+
+.fw-200 {
+    font-weight: 200 !important;
+}
+
+.fw-300 {
+    font-weight: 300 !important;
+}
+
+.fw-400 {
+    font-weight: 400 !important;
+}
+
+.fw-500 {
+    font-weight: 500 !important;
+}
+
+.fw-600 {
+    font-weight: 600 !important;
+}
+
+.fw-700 {
+    font-weight: 700 !important;
+}
+
+.fw-800 {
+    font-weight: 800 !important;
+}
+
+// end css font weight
+
+// css input global
+.custom-tag-of-form {
+    background: #F5F8FA;
+    border-radius: 5px;
+    height: 40px;
+    border: none;
+}
+
+.custom-tag-of-form:focus {
+    background: #F5F8FA;
+    border-radius: 5px;
+    height: 40px;
+    border: none;
+}
+
+.custom-tag-of-form:focus-visible {
+    outline: none;
+}
+
+// end css input global
+
+.h-40 {
+    height: 40px !important;
+}
+
+// ====================== start style text ==========================
+.title-compo-global {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.title-modal-global {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.text-normal-global {
+    font-size: 1.3rem;
+}
+
+.text-medium-global {
+    font-size: 1.6rem;
+}
+
+.text-small-global {
+    font-size: 1.2rem;
+}
+
+.text-form-control-global {
+    font-size: 1.4rem;
+}
+
+.text-no-data {
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+}
+
+@media (max-width: 1280px) {
+    .title-compo-global {
+        font-size: 1.4rem;
+    }
+
+    .title-modal-global {
+        font-size: 1.7rem;
+    }
+
+    .text-normal-global {
+        font-size: 1.2rem;
+    }
+
+    .text-medium-global {
+        font-size: 1.5rem;
+    }
+
+    .text-form-control-global {
+        font-size: 1.3rem;
+    }
+}
+
+// ====================== end style text ==========================
+
+// ====================== start style button so ==========================
+.so-btn {
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.so-btn:focus {
+    outline: none;
+}
+
+// 1.
+.so-btn-primary {
+    background: #556EE6;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: calc(0.8rem + 1px) calc(2.1rem + 1px) !important;
+
+    img {
+        margin-right: 4px;
+        width: 14px;
+        height: 14px;
+    }
+
+    &--small {
+        font-size: 1.2rem;
+        border-radius: 3px;
+        padding: calc(0.5rem + 1px) calc(1.9rem + 1px) !important;
+
+        img {
+            width: 13px;
+            height: 13px;
+        }
+    }
+}
+
+.so-btn-primary.active,
+.so-btn-primary:hover {
+    background: #3c5ae9;
+}
+
+.so-btn-primary:focus {
+    outline: none;
+}
+
+// 2.
+.so-btn-danger {
+    background: #F64E60;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: calc(0.5rem + 1px) calc(1.9rem + 1px) !important;
+
+    img {
+        margin-right: 4px;
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.so-btn-danger.active,
+.so-btn-danger:hover {
+    background: #e54a4a;
+}
+
+// 3.
+.so-btn-cancel {
+    background: #F4F5F9;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    color: #495057;
+    padding: calc(0.5rem + 1px) calc(1.9rem + 1px) !important;
+}
+
+.so-btn-cancel.active,
+.so-btn-cancel:hover {
+    background: #CFD3DD;
+}
+
+// 4.
+.btn-disable,
+button:disabled,
+button[disabled] {
+    opacity: 0.6;
+}
+
+// ====================== end style button so ==========================
+
+// ====================== style color =================================
+.color-primary {
+    color: #464E5F;
+}
+
+.color-secondary {
+    color: #50A5F1;
+}
+
+.color-tertiary {
+    color: #7B8188;
+}
+
+// ======================= end style color ============================
+
+// ======================= style background color ===================
+.bg-color-primary {
+    background-color: #F3F6F9;
+}
+
+// ======================= end style background color =======================
+
+
+// ======================= start style modal global ==========================
+.modal-header {
+    padding-top: 1.5rem;
+    padding-bottom: 1.3rem;
+    border-bottom-color: #EDEDED;
+}
+
+.modal-btn-close {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: #556ee6;
+
+    span {
+        color: #fff;
+    }
+}
+
+.modal-footer {
+    border-top-color: #EDEDED;
+
+    .so-btn-cancel {
+        margin-right: 7px;
+    }
+
+    .so-btn-primary {
+        margin-left: 7px;
+    }
+}
+
+.modal {
+    top: 15px;
+}
+
+// custom size when open modal
+.modal-xxl {
+    max-width: 80%;
+}
+
+.modal-xxxl {
+    max-width: 90%;
+}
+
+.modal-full-screen {
+    max-width: 95%;
+}
+
+// ========================== end style modal global ===========================
+
+// ========================= start style notification ==========================
+.so-notification {
+    .ant-notification-notice-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span.ant-notification-notice-close-x {
+        line-height: 1;
+    }
+
+    .ant-notification-notice-with-icon .ant-notification-notice-message {
+        margin-left: 32px;
+        font-size: 15px;
+    }
+
+    .ant-notification-notice-icon {
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
+
+.so-notification.ant-notification-notice {
+    border-radius: 4px;
+}
+
+// success
+
+// warming
+.so-notification-warming .ant-notification-notice-with-icon .ant-notification-notice-message {
+    color: #faad14;
+}
+
+// err
+.so-notification-err .ant-notification-notice-with-icon .ant-notification-notice-message {
+    color: #ff4d4f;
+}
+
+// ========================= end style notification ==========================
+
+// style dropdown action
+ul.ant-dropdown-menu.ant-dropdown-menu-root.ant-dropdown-menu-light.ant-dropdown-menu-vertical {
+    padding: 10px !important;
+    background: #FFFFFF !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 5px !important;
+}
+
+.ant-dropdown-menu-item {
+    padding: 10px;
+}
+
+.ant-dropdown-menu-item:hover {
+    border-radius: 5px;
+}
+
+// end style dropdown action
+
+// style multiple select
+nz-select {
+    width: 100%;
+}
+
+.ant-select {
+    width: 100%;
+}
+
+.ant-select-selector {
+    background-color: #F5F8FA !important;
+    border-radius: 5px !important;
+    border: none !important;
+    min-height: 40px !important;
+    padding: 5px 5px !important;
+    box-shadow: unset !important;
+}
+
+.cdk-overlay-container {
+    z-index: 99999;
+}
+
+.ant-select-multiple .ant-select-selection-item {
+    background: #e5e5e5;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #5E6278;
+}
+
+.ant-select-selection-search-input {
+    height: 40px !important;
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    padding: 5px 10px !important;
+}
+
+.ant-select-show-search.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    padding: 5px 10px !important;
+}
+
+.ant-select-multiple .ant-select-selection-search {
+    margin-inline-start: unset !important;
+}
+
+// end style multiple select
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// ============ start style so-input-search ==========
+.so-input-search {
+  min-width: 30rem;
+  background: #f3f6f9;
+  max-height: 3.6rem;
+  border-radius: 6px;
+  img {
+    width: 15px;
+  }
+}
+.ant-input-affix-wrapper {
+  padding: calc(0.5rem + 1px) 10px calc(0.5rem + 1px) calc(2.1rem + 1px) !important;
+  border-radius: 6px;
+  background: #f3f6f9;
+  border: none;
+  input {
+    background: #f3f6f9;
+  }
+}
+// ============ end style so-input-search ==========
+
+// ============ start style checkbox =========
+::ng-deep .so-checkbox {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  .ant-checkbox {
+    top: 0;
+  }
+  .ant-checkbox-inner {
+    width: 19px;
+    height: 19px;
+    border-radius: 4px;
+    border: 1px solid #556ee6;
+  }
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #556ee6;
+  }
+  .ant-checkbox-wrapper:hover {
+    border-color: #556ee6;
+  }
+  .ant-checkbox+span {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+}
+::ng-deep .so-checkbox--white {
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #fff;
+  }
+  .ant-checkbox-checked .ant-checkbox-inner::after {
+    border: 2px solid #556ee6;
+  }
+}
+// =========== end style checkbox ============

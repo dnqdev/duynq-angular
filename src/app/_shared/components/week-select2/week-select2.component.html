@@ -1,0 +1,13 @@
+<div class="week-select-box">
+  <label for="" class="week-label">{{ textLabel }} </label>
+  <nz-select class="week-select" nzShowSearch [(ngModel)]="weekCurrentId">
+      <nz-option nzCustomContent *ngFor="let weekItem of weekList" [nzLabel]="weekItem.name" [nzValue]="weekItem.id">
+          <div class="option-div">
+              <div class="option-icon-box" >
+                  <img src="assets/images/svg/tich.svg"  *ngIf="weekCurrentId == weekItem.id"/>
+              </div>
+              <span [ngClass]="{'color-fffff': weekCurrentId == weekItem.id}">{{ weekItem.name }}</span>
+          </div>
+      </nz-option>
+  </nz-select>
+</div>
