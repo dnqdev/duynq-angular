@@ -29,8 +29,10 @@ export class SingleDatePickerComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.selected.startDate = moments(Number(this.currentDate)*1000);
-    this.selected.endDate = moments(Number(this.currentDate)*1000);
+    // this.selected.startDate = moments(Number(this.currentDate)*1000);
+    // this.selected.endDate = moments(Number(this.currentDate)*1000);
+    this.selected.startDate = this.currentDate;
+    // this.selected.endDate = moments(Number(this.currentDate)*1000);
     this.options.timePicker = this.timePicker;
     if(this.timePicker){
       this.options.locale.format = 'hh:mm A DD/MM/YYYY'
@@ -39,7 +41,7 @@ export class SingleDatePickerComponent implements OnInit {
 
   ngModelChange(event:any){
     let dataOutput = null;
-    dataOutput = moments(event.startDate.$d).format('X');
+    dataOutput = moments(event.startDate.$d).format('DD/MM/yyyy');
     this.dataTimeOutput.emit(dataOutput);
   }
 

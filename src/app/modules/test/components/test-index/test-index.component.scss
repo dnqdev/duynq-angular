@@ -1,0 +1,69 @@
+.add-action {
+  padding: 10px 20px;
+  background: #3f4041;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.table {
+  padding-bottom: 15px;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid;
+  margin-bottom: 15px;
+  tbody {
+    tr {
+      td:nth-child(1) {
+        width: 20%;
+      }
+      td:nth-child(2) {
+        width: 20%;
+      }
+      td:nth-child(3) {
+        width: 60%;
+      }
+
+      td {
+        border: 1px solid;
+        .symbol {
+          width: 150px;
+          height: 150px;
+          border: 1px solid #3f4041;
+          img {
+            width: 150px;
+            height: 150px;
+          }
+        }
+
+        .action {
+          padding: 10px 20px;
+          background: #3f4041;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          text-align: center;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.tai-them {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  span {
+    padding: 10px 20px;
+    background: #3f4041;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+}

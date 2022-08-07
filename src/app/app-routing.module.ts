@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ComponentExampleComponent } from './_shared/components/component-example/component-example.component';
 import { TestLayoutComponent } from './_layouts/test-layout/test-layout.component';
 
 export const routes: Routes = [
@@ -9,13 +8,12 @@ export const routes: Routes = [
     component: TestLayoutComponent,
     children: [
       {
-        path: 'user',
-        loadChildren: () => import('./modules/user/user.module').then((m) => m.UserModule)
-      }
+        path: '',
+        loadChildren: () => import('./modules/test/test.module').then((m) => m.TestModule)
+      },
     ],
-  },
 
-  { path: 'compo-example', component: ComponentExampleComponent },
+  },
 
   { path: '**', redirectTo: 'error/404' },
 ];

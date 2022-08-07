@@ -1,0 +1,78 @@
+<div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+  <div class="col-xl-12">
+    <div class="card card-flush h-md-100">
+      <div class="card-header pt-7">
+        <h3 class="card-title d-flex align-items-start flex-column">
+          <span class="card-label fs-18 fw-700">Danh sách</span>
+        </h3>
+        <div class="card-toolbar">
+
+        </div>
+      </div>
+      <div class="card-body pt-6">
+        <div class="w-100 d-flex justify-content-between align-items-center">
+          <div class="w-100 d-flex justify-content-end align-items-center custom-search">
+            <div class="search-select-option">
+              <select (change)="changeClass($event)"
+                class="form-select custom-select text-center form-select form-select-solid form-select-lg text-formcontrol-global fs-14">
+                <option *ngFor="let item of classList" value="{{ item.id }}">{{ item.fullname }}</option>
+              </select>
+            </div>
+            <span class="add-action d-flex justify-content-center align-items-center fs-14" (click)="openModalAdd()">
+              <img class="add-icon" src="assets/images/svg/plus.svg" alt="">
+              Thêm mới
+            </span>
+          </div>
+        </div>
+        <br>
+
+        <table class="table" *ngFor="let item of dataSource, let index=index">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">
+                {{ index + 1}}
+              </td>
+              <td >
+                <span class="d-block action fs-14" (click)="openModalUpdate(item)">
+                  Sửa
+                </span>
+                <span class="d-block action fs-14" (click)="openModalDelete(item, getNameClass(item.classId))">
+                  Xóa
+                </span>
+              </td>
+              <td class="text-start fs-14 fw-600">
+                <div class="d-flex align-items-center">
+                  <div class="symbol symbol-50px me-3">
+                    <img *ngIf="item.Avatar" src="{{ item.Avatar }}" alt="">
+                    <img *ngIf="!item.Avatar" src="https://robohash.org/7IZ.png?set=set3" alt="">
+                  </div>
+                  <div class="d-flex justify-content-start flex-column">
+                    <span class="d-flex">
+                      <span class="fw-700 d-block color-50a5f1 mb-1 fs-14 pe-10">{{ item.firstName }} {{ item.lastName }}</span>
+                      <span class="fw-500 d-block fs-14">{{ item.gender === 1 ? "Nam" : (item.gender === 2 ? "Nữ" : "") }} </span>
+                    </span>
+                    <span class="d-block fs-12">
+                      <span class="color-50a5f1 pe-10">Ngày sinh: {{item.DayOfBirth}}</span>
+                      <span>{{ getNameClass(item.classId) }}</span>
+                      <!-- <span>Lớp: {{ item.classId }}</span> -->
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tai-them">
+          <span>
+            Tải thêm
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spinner" *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>

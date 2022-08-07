@@ -1,0 +1,17 @@
+
+.preview-image {
+  position: relative;
+  width: 150px;
+  .btn-click-change-avatar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-color: rgb(202, 194, 194);
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+   }
+}
+

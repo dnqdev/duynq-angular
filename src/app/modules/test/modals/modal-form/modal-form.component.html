@@ -1,0 +1,99 @@
+<form class="custom-form-add-menu fs-14" [formGroup]="formGroup" (ngSubmit)="onSubmitformGroup()" *ngIf="formGroup">
+  <div class="modal-header">
+    <h5 class="title-modal-global">{{dataModal?.titleModal}}</h5>
+    <button type="button" class="close modal-btn-close" data-dismiss="modal" (click)="closeModal('dismiss')"
+      [hidden]="!dataModal?.isHiddenBtnClose">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-department">
+
+      <div class="row mb-8">
+        <label class="col-md-3 col-form-label d-flex align-items-center">
+          <img class="search-icon pe-1" src="assets/images/svg/user-nurse.svg" alt="">
+          <span>avatar</span>
+        </label>
+        <div class="col-md-9">
+          <div class="preview-image">
+            <img [src]="avatar" alt="" class="content-image-priview" style="width: 150px; height: 150px;">
+            <span class="btn-click-change-avatar fs-11 fw-500" (click)="fileInputAvatar.click()">
+              tải lên
+            </span>
+          </div>
+          <input #fileInputAvatar type="file" name="fileInputAvatar" class="d-none"
+            accept="image/png, image/jpeg image/jpg" (change)="onChangeFileInputAvatar($event)">
+        </div>
+      </div>
+
+      <div class="row mb-8">
+        <label class="col-md-3 col-form-label d-flex align-items-center">
+          <img class="search-icon pe-1" src="assets/images/svg/user-nurse.svg" alt="">
+          <span>Họ và tên</span>
+        </label>
+        <div class="col-md-9">
+          <input type="text" name="fullName" formControlName="fullName" class="fs-14 form-control form-control-solid">
+          <span class="fs-12 text-danger"
+            *ngIf="(formGroup.controls.fullName.dirty || formGroup.controls.fullName.touched) && formGroup.controls.fullName.errors?.['required']">
+            Họ tên không được để trống
+          </span>
+          <span class="fs-12 text-danger"
+            *ngIf="(formGroup.controls.fullName.dirty || formGroup.controls.fullName.touched) && formGroup.controls.fullName.errors?.['pattern']">
+            họ tên không đúng định dạng
+          </span>
+        </div>
+
+      </div>
+      <div class="row mb-8">
+        <label class="col-md-3 col-form-label d-flex align-items-center">
+          <img class="search-icon pe-1" src="assets/images/svg/object-ungroup.svg" alt="">
+          <span>ngày sinh</span>
+        </label>
+        <div class="col-md-9">
+          <app-single-date-picker [currentDate]="currentDate" [timePicker]="timePicker"
+            (dataTimeOutput)="dataTimeOutput($event)"></app-single-date-picker>
+        </div>
+      </div>
+
+      <div class="row mb-8">
+        <label class="col-md-3 col-form-label d-flex align-items-center">
+          <img class="search-icon pe-1" src="assets/images/svg/status-f1.svg" alt="">
+          Giới tính
+        </label>
+        <div class="col-md-9 d-flex align-items-center">
+          <nz-radio-group [(ngModel)]="genderValue" formControlName="gender">
+            <label nz-radio [nzValue]="valueNam">Nam</label>
+            <label nz-radio [nzValue]="valueNu">Nữ</label>
+          </nz-radio-group>
+        </div>
+      </div>
+
+      <div class="row mb-8">
+        <label class="col-md-3 col-form-label d-flex align-items-center">
+          <img class="search-icon pe-1" src="assets/images/svg/status-f1.svg" alt="">
+          select
+        </label>
+        <div class="col-md-9">
+          <select formControlName="classId"
+            class="form-select custom-select form-select form-select-solid form-select-lg fs-14">
+            <option value="" selected>Chọn lớp</option>
+            <option value="{{ item.id }}" *ngFor="let item of classList">{{ item.fullname }}</option>
+          </select>
+          <span class="fs-12 text-danger d-block"
+            *ngIf="(formGroup.controls.classId.dirty || formGroup.controls.classId.touched) && formGroup.controls.classId.errors?.['required']">
+            Lớp học không được để trống
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="so-btn so-btn-cancel" data-dismiss="modal"
+      (click)="closeModal('cancel')">{{dataModal?.btnCancel}}</button>
+    <button type="submit" class="so-btn so-btn-primary so-btn-primary--small"
+      [disabled]="!formGroup.valid">{{dataModal?.btnAccept}}</button>
+  </div>
+</form>
+<div class="spinner" *ngIf="isLoading">
+  <app-loading></app-loading>
+</div>
